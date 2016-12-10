@@ -1,0 +1,31 @@
+<h1>Adicionar Questionário</h1>
+<form action="./cadastro/salvar" method="post">
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Informações</th>
+        <th>Ação</th>
+    </tr>
+    <tr>
+        <td class="id">*</td>
+        <td class="titulo">
+            <div>
+                <label for="titulo">Título:</label>
+                <input type="text" maxlength="50" name="titulo_questionario" value="" id="titulo_questionario">
+            </div>
+            <div>
+                <label for="descricao">Descrição:</label>
+                <textarea name="descricao_questionario" maxlength="200" id="descricao_questionario"></textarea>
+            </div>
+        </td>
+        <td class="id">
+            <div class="button">
+                 <input type="hidden" name="id_conselho" value="<?=$questionario['id_conselho'] ?>">
+                 <button type="submit" id="salvar_questionario">Salvar</button>
+                 <br /><br />
+                 <button type="button" id='voltar'>Voltar</button>
+            </div>
+        </td>
+    </tr>
+</table>
+</form>

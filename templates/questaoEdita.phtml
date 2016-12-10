@@ -1,0 +1,33 @@
+<h1>Editar Questionário</h1>
+<?php foreach ($questoes as $questao): ?>
+<form action="./<?=$questao['id_questao'] ?>/salvar" method="post">
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Informações</th>
+        <th>Ação</th>
+    </tr>
+    <tr>
+        <td class="id">
+            <?=$questao['id_questao'] ?>
+        </td>
+        <td class="titulo">
+            <div>
+                <label for="descricao">Descrição:</label>
+                <textarea name="descricao_questao" maxlength="100" id="descricao_questao"><?=$questao['descricao_questao'] ?></textarea>
+            </div>
+        </td>
+        <td class="id">
+            <div class="button">
+                 <input type="hidden" name="id_questao" value="<?=$questao['id_questao'] ?>">
+                 <input type="hidden" name="id_questionario" value="<?=$questao['id_questionario'] ?>">
+                 <input type="hidden" name="id_conselho" value="<?=$questao['id_conselho'] ?>">
+                 <button type="submit" id="salvar_questao">Salvar</button>
+                 <br /><br />
+                 <button type="button" id="voltar">Voltar</button>
+            </div>
+        </td>
+    </tr>
+</table>
+</form>
+<?php endforeach; ?>

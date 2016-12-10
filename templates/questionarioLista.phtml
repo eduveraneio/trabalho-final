@@ -1,0 +1,27 @@
+<h1>Lista de Questionários</h1>
+
+<p><a href="./questionario/novo/cadastro">Adicionar</a></p>
+
+<?php  if(count($questionarios) > 0)  { ?>
+
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Título</th>
+        <th>Questões</th>
+    </tr>
+
+<?php foreach ($questionarios as $questionario): ?>
+
+    <tr>
+        <td class="id">
+            <a href="/conselho-classe/<?=$questionario['id_conselho'] ?>/questionario/<?=$questionario['id_questionario'] ?>">
+            <?=$questionario['id_questionario'] ?></a>
+        </td>
+        <td class="titulo"><?=$questionario['titulo_questionario'] ?></td>
+        <td class="id"><a href="/conselho-classe/<?=$questionario['id_conselho'] ?>/questionario/<?=$questionario['id_questionario'] ?>/questao">
+        visualizar</a></td>
+    </tr>
+
+<?php endforeach; } else echo 'Nenhum registro foi encontrado.'; ?>
+</table>

@@ -1,0 +1,25 @@
+<h1>Lista de Conselho de Classe</h1>
+
+<?php  if(count($conselhos) > 0)  { ?>
+
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Descrição</th>
+        <th>Questionários</th>
+    </tr>
+
+<?php foreach ($conselhos as $conselho): ?>
+
+    <tr>
+        <td class="id">
+            <?=$conselho['id_conselho'] ?>
+        </td>
+        <td class="descricao"><?=$conselho['descricao_conselho'] ?></td>
+        <td class="id">
+            <a href="./conselho-classe/<?=$conselho['id_conselho'] ?>/questionario">visualizar</a>
+        </td>
+    </tr>
+
+<?php endforeach; } else echo 'Nenhum registro foi encontrado.'; ?>
+</table>
